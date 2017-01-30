@@ -34,7 +34,7 @@ int main(void) {
 		PORTB = ~tmp;
 		_delay_ms(1000);
 		PORTB = 0xFF;
-		uart_putc(tmp);
+		uart_putc(tmp); // write the UDR value back to rs-232
 	}
 	
 	return 0;
