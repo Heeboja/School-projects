@@ -10,7 +10,7 @@
 #include <util/delay.h>
 #include <avr/interrupt.h>
 
-uint8_t i, j, k = 0; // intialize a counters
+volatile uint8_t i, j, k = 0; // intialize a counters
 
 ISR(TIMER0_OVF_vect) {
 	TCNT0 = 246; // increase the counter so it goes only 10 ticks ~ 10ms
