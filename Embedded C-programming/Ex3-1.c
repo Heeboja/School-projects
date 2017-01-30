@@ -10,7 +10,7 @@
 #include <util/delay.h>
 #include <avr/interrupt.h>
 
-int i = 0; // intialize a counter
+volatile uint8_t i = 0; // intialize a counter
 
 ISR(TIMER0_OVF_vect) {
 	i++; // increase counter every ~256 ms
