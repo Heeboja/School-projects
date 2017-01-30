@@ -13,7 +13,8 @@
 volatile uint8_t i = 0; // intialize a counter
 
 ISR(TIMER0_OVF_vect) {
-	i++; // increase counter every ~256 ms
+	TCNT0 = 6;
+	i++; // increase counter every ~250 ms
 		if (i == 4) { 
 			PORTB = PORTB^0x01;
 			i = 0;
@@ -24,6 +25,7 @@ int main(void) {
 	DDRB = 0xFF;  // PORTB as input
 	PORTB = 0xFF; // PORTB default values off
 	TCCR0 = TCCR0 | 0x05; // 0000 0101
+	TCNT0 = 6;
 	TIMSK = TIMSK | 0x01 ; // 0000 0001
 	sei(); // Enables global interrupts
 	while (1) {
