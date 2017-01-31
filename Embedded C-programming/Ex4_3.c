@@ -38,7 +38,7 @@ int main(void) {
 			}
 			count = 0;
 		}	
-    }
+	}
 	return 0;
 }
 
