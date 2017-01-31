@@ -33,7 +33,7 @@ ISR(TIMER0_OVF_vect) {
 }
 // Requires a CLK of 1MHz
 int main(void) {
-	DDRB = 0xFF;  // PORTB as input
+	DDRB = 0xFF;  // PORTB as output
 	PORTB = 0xFF; // PORTB default values off
 	TCCR0 = TCCR0 | 0x05; // 0000 0101, Prescaler value of 1024
 	TCNT0 = 246;
