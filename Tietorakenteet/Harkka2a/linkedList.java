@@ -1,27 +1,19 @@
 package harkka2a;
 
+/*Listaluokka*/
 public class linkedList
 {
     protected Node start;
     public int size;
  
-    /* Constructor */
+    /* konstruktori */
     public linkedList()
     {
         start = null;
         size = 0;
     }
-    /* Function to check if list is empty */
-    public boolean isEmpty()
-    {
-        return start == null;
-    }
-    /* Function to get size of list */
-    public int getSize()
-    {
-        return size;
-    }
-    /* Function to insert element */
+  
+    /* Elementin lisäys */
     public void insert(int val)
     {
     	if(search(val)== true) {
@@ -70,10 +62,12 @@ public class linkedList
         }
         size++;
     }
-    /* Function to delete node at position */
+    
+    /* Kikkailemalla saatu integgerin poistaminen. Tällä metodilla poistetaan tietyltä paikalta arvo ja korjataan linkit */
     public void deleteAtPos(int pos)
     {        
-        if (pos == 1) 
+
+    	if (pos == 1) 
         {
             if (size == 1)
             {
@@ -113,6 +107,7 @@ public class linkedList
         }        
     }
     
+    /*Tämä metodi vain selvittää kyseisen arvon paikan ja siirtää paikkatiedon deleteAtPos()-metodille */
     public void delete(int delete)
     {   
     	int pos = 1;
@@ -122,10 +117,10 @@ public class linkedList
     			deleteAtPos(pos);
     		}
     		pos++;
-    	}
-    	        
+    	}	        
     }
-    /* Function to display status of list */
+    
+    /* Listan tulostusmetodi */
     public void display()
     {
         System.out.print("List = ");
@@ -150,6 +145,7 @@ public class linkedList
         System.out.print(ptr.getData()+ "\n");
     }
     
+    /*Käännetyllä järjestyksellä tulostaminen. Jälleen kikkailemalla mennään ensin listan "loppuun" ja aloitetaan tulostus sieltä.*/
     public void display_backwards()
     {
         System.out.print("List = ");
