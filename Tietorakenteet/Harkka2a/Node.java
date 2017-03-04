@@ -39,11 +39,11 @@ class Node
     {
         return prev;
     }
-    /* Function to set data to node */
+    /* Function to set data to node 
     public void setData(int d)
     {
         data = d;
-    }
+    }*/
     /* Function to get data from node */
     public int getData()
     {
